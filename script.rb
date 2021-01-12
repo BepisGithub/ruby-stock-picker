@@ -9,6 +9,12 @@ def stock_picker(arr)
     weeks.each do |item|
         lowest = item.min
         lowest_index = item.index(lowest)
+        item_sub_array = item
+        highest = item.max
+        highest_index = item.index(highest)
+        p highest_index
+        p lowest_index
+        
     end
 
 
