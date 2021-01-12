@@ -6,6 +6,10 @@ def stock_picker(arr)
     #do this for each group of 7
     #do the check for each week
     weeks = arr.each_slice(7).to_a
+    weeks.each do |item|
+        lowest = item.min
+        lowest_index = item.index(lowest)
+    end
 
 
 end
