@@ -25,17 +25,17 @@ def stock_picker(arr)
         # puts "Best day to buy is " + lowest_index.to_s + " on week " + weeks.index(item).to_s
         # puts "Best day to sell is " + highest_index.to_s + " on week " + weeks.index(item).to_s
         
-    weeks.each do |week|
-        lowest = week.min
-        lowest_index = week.index(lowest)
-        sorted = week.sort().reverse
-        p sorted
-        sorted.each_with_index do |stock, index|
-            if stock>lowest && index>lowest_index
-        end
-        p sorted
+    # weeks.each do |week|
+    #     lowest = week.min
+    #     lowest_index = week.index(lowest)
+    #     sorted = week.sort().reverse
+    #     p sorted
+    #     sorted.each_with_index do |stock, index|
+    #         if stock>lowest && index>lowest_index
+    #     end
+    #     p sorted
 
-    end
+    # end
 
 
 end
