@@ -36,6 +36,9 @@ def stock_picker(arr)
     #     p sorted
 
     # end
+    weeks.each do |week|
+        
+    end
 
 
 end
