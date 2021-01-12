@@ -37,8 +37,12 @@ def stock_picker(arr)
 
     # end
     weeks.each do |week|
-        week.each do |day|
-            
+        week.each_with_index do |buy_day,index|
+            # p index
+            week.each_with_index do |sell_day,index|
+                #p sell_day
+                
+            end
         end
 
 
