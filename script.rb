@@ -9,11 +9,16 @@ def stock_picker(arr)
     weeks.each do |item|
         lowest = item.min
         lowest_index = item.index(lowest)
-        item_sub_array = item
         highest = item.max
         highest_index = item.index(highest)
-        p highest_index
-        p lowest_index
+        while highest_index<lowest_index && item.length!=0
+            item_copy = item
+            item_copy.delete(highest)
+            highest = item_copy.max
+            highest_index = item_copy.index(highest)
+        end
+        puts "Best day to buy is " + lowest_index.to_s + " on week " + weeks.index(item).to_s
+        puts "Best day to sell is " + highest_index.to_s + " on week " + weeks.index(item).to_s
         
     end
 
