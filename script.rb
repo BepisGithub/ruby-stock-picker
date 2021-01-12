@@ -28,7 +28,12 @@ def stock_picker(arr)
     weeks.each do |week|
         lowest = week.min
         lowest_index = week.index(lowest)
-                
+        sorted = week.sort().reverse
+        p sorted
+        sorted.each_with_index do |stock, index|
+            if stock>lowest && index>lowest_index
+        end
+        p sorted
 
     end
 
