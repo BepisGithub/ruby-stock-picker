@@ -37,7 +37,11 @@ def stock_picker(arr)
 
     # end
     weeks.each do |week|
-        
+        week.each do |day|
+            
+        end
+
+
     end
 
 
