@@ -57,10 +57,18 @@ def stock_picker(arr)
         # index_s = week.index(sell_day)
         # results[index_b] = [index_s,max_profit]
     end
+    sorted = []
     
     results.each do |key,value|
         # p value
+        if value[0]!=nil
+            sorted.push(value[0][0])
+        end
     end
+    p results
+    p sorted
+    p sorted.sort.reverse.max
+    
 
 end
 
