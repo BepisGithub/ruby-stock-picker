@@ -6,7 +6,7 @@ def stock_picker(arr)
     #take the array with the 7 times and place it in a week array
     #do this for each group of 7
     #do the check for each week
-    weeks = arr.each_slice(7).to_a
+    week = arr
     # weeks.each do |item|
     #     lowest = item.min
     #     lowest_index = item.index(lowest)
@@ -39,24 +39,28 @@ def stock_picker(arr)
 
 
     results = {}
-    weeks.each do |week|
-        week.each_with_index do |buy_day,index_b|
-            # p index
-            profit_margins = []
-            week.each_with_index do |sell_day,index_s| #while sell index > buy index
+    
+    week.each_with_index do |buy_day,index_b|
+        # p index
+        profit_margins = []
+        week.each_with_index do |sell_day,index_s| #while sell index > buy index
+            if index_s>index_b
                 profit = sell_day-buy_day
-                profit_margins.push(profit)
+                profit_margins.push([profit,index_s])
                 #p sell_day
             end
-            max_profit = profit_margins.max
-            sell_day = max_profit+buy_day
-            index_s = week.index(sell_day)
-            results[index_b] = [index_s,max_profit]
         end
+        max_profit = profit_margins.sort.reverse
+        max_profit = max_profit.max
+        results[index_b] = [max_profit]
 
-
+        # index_s = week.index(sell_day)
+        # results[index_b] = [index_s,max_profit]
     end
-    p results
+    
+    results.each do |key,value|
+        # p value
+    end
 
 end
 
