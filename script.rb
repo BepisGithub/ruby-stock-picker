@@ -62,14 +62,12 @@ def stock_picker(arr)
     results.each do |key,value|
         # p value
         if value[0]!=nil
-            sorted.push(value[0][0])
+            sorted.push(value)
         end
     end
-    p results
-    p sorted
-    p sorted.sort.reverse.max
-    
+    highest_profit = sorted.sort.reverse.max
+    return [results.key(highest_profit),highest_profit[0][1]]
 
 end
 
-stock_picker([17,3,6,9,15,8,6,1,10])
+p stock_picker([17,3,6,9,15,8,6,1,10])
