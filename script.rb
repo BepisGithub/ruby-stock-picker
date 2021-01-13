@@ -36,18 +36,27 @@ def stock_picker(arr)
     #     p sorted
 
     # end
+
+
+    results = {}
     weeks.each do |week|
-        week.each_with_index do |buy_day,index|
+        week.each_with_index do |buy_day,index_b|
             # p index
-            week.each_with_index do |sell_day,index|
+            profit_margins = []
+            week.each_with_index do |sell_day,index_s| #while sell index > buy index
+                profit = sell_day-buy_day
+                profit_margins.push(profit)
                 #p sell_day
-                
             end
+            max_profit = profit_margins.max
+            sell_day = max_profit+buy_day
+            index_s = week.index(sell_day)
+            results[index_b] = [index_s,max_profit]
         end
 
 
     end
-
+    p results
 
 end
 
